@@ -27,4 +27,3 @@ char *array = NULL;
 	}
 	return (array);
 }
-}
