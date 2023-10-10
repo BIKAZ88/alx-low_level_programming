@@ -8,7 +8,7 @@
  *
  * Description: Define a new type struct dog with the elements
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
