@@ -1,21 +1,4 @@
-#include <stdio.h>
 #include "lists.h"
-#include <stdlib.h>
-/**
- *_strlen - return the length of a string
- *@s: the string whose length to check
- *
- *Return: integer length of string
- */
-int _strlen(char *s)
-{
-int i = 0;
-if (!s)
-return (0);
-while (*s++)
-i++;
-return (i);
-}
 /**
  * print_list - prints all the elements of a list_t list
  * @h: constant pointer type list_t
@@ -24,13 +7,20 @@ return (i);
  */
 size_t print_list(const list_t *h)
 {
-size_t i = 0;
+	size_t nodes;
 
-while (h)
-{
-printf("[%d] %s\n", _strlen(h->str), h->str ? h->str : "(nil)");
-h = h->next;
-i++;
-}
-return (i);
+	nodes = 0;
+
+	while (h)
+	{
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
+
+		else
+			printf("[%d] %s\n", h->len, h->str);
+
+		nodes++;
+		h = h->next;
+	}
+	return (nodes);
 }
